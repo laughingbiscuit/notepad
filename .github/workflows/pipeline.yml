@@ -7,6 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install codedown to extract code from notepad
+        run: npm i -g codedown
       - name: Run the code from the notepad
-        uses: ./environment 
-        id: run-code
+        run: cat README.md | codedown sh | sh -xe

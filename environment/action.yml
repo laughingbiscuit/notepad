@@ -1,5 +1,0 @@
-name: 'Run code from notepad'
-description: 'Extract and run code from README'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
