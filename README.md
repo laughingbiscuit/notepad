@@ -71,7 +71,7 @@ helm ls -n istio-system
 helm status istiod -n istio-system
 kubectl label namespace default istio-injection=enabled
 curl https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/platform/kube/bookinfo.yaml | kubectl apply -f -
-sleep 180
+while ! kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sSf productpage:9080/productpage | grep -o "<title>.*</title>"; do sleep 5; echo -n "."; done
 kubectl get svc
 kubectl get po
 kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
