@@ -40,7 +40,6 @@ helm install cilium cilium/cilium --version 1.13.0 \
    --namespace kube-system \
    --set image.pullPolicy=IfNotPresent \
    --set ipam.mode=kubernetes
-sleep 30
 ```
 
 Now lets install the cilium cli and check everything works
