@@ -4,7 +4,10 @@
 
 Any shell code blocks are run by github actions and must return 0 for CI to pass.
 
+Lets check if our dependencies are installed
+
 ```sh
-docker ps
-curl https://httpbin.org/get
+which kubectl
+which helm
+which kind
 ```
