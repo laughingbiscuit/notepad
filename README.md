@@ -75,4 +75,16 @@ kubectl get svc
 kubectl get po
 kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
 ```
+Gloo
 
+<!-- https://docs.solo.io/gloo-edge/latest/getting_started/ -->
+
+```bash
+helm repo add gloo https://storage.googleapis.com/solo-public-helm
+helm repo update
+
+helm install gloo gloo/gloo -n gloo-system --create-namespace
+sleep 30
+kubectl get all -n gloo-system
+
+```
