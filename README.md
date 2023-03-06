@@ -11,3 +11,23 @@ which kubectl
 which helm
 which kind
 ```
+
+Lets create a multi-node kind cluster
+
+```sh
+kind create cluster --config - <<EOF
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+networking:
+  disableDefaultCNI: true
+EOF
+
+sleep 30
+kubectl cluster-info --context kind-kind
+```
+
