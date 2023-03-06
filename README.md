@@ -6,7 +6,7 @@ Any shell code blocks are run by github actions and must return 0 for CI to pass
 
 Lets check if our dependencies are installed
 
-```sh
+```bash
 which kubectl
 which helm
 which kind
@@ -14,7 +14,7 @@ which kind
 
 Lets create a multi-node kind cluster
 
-```sh
+```bash
 kind create cluster --config - <<EOF
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -32,7 +32,7 @@ kubectl cluster-info --context kind-kind
 
 Lets install Cilium
 
-```sh
+```bash
 helm repo add cilium https://helm.cilium.io/
 docker pull quay.io/cilium/cilium:v1.13.0
 kind load docker-image quay.io/cilium/cilium:v1.13.0
@@ -45,7 +45,7 @@ sleep 30
 
 Now lets install the cilium cli and check everything works
 
-```sh
+```bash
 CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/master/stable.txt)
 CLI_ARCH=amd64
 if [ "$(uname -m)" = "aarch64" ]; then CLI_ARCH=arm64; fi

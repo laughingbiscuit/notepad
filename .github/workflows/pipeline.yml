@@ -10,4 +10,4 @@ jobs:
       - name: Install codedown to extract code from notepad
         run: npm i -g codedown
       - name: Run the code from the notepad
-        run: cat README.md | codedown sh | sh -xe
+        run: cat README.md | codedown sh | bash -xe
