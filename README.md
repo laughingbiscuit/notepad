@@ -42,9 +42,21 @@ helm install cilium cilium/cilium --version 1.13.0 \
    --set image.pullPolicy=IfNotPresent \
    --set ipam.mode=kubernetes
 sleep 30
-kubectl cluster-info --context kind-kind
-kubectl get nodes --context kind-kind
-kubectl get nodes
 ```
 
+Now lets install the cilium cli and check everything works
 
+```sh
+CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/master/stable.txt)
+CLI_ARCH=amd64
+if [ "$(uname -m)" = "aarch64" ]; then CLI_ARCH=arm64; fi
+curl -L --fail --remote-name-all https://github.com/cilium/cilium-cli/releases/download/${CILIUM_CLI_VERSION}/cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
+sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
+sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
+rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
+
+cilium status --wait
+cilium connectivity test
+kubectl cluster-info --context kind-kind
+kubectl get nodes
+```
