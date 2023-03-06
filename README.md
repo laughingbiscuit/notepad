@@ -27,7 +27,6 @@ networking:
   disableDefaultCNI: true
 EOF
 
-sleep 10
 kubectl cluster-info --context kind-kind
 ```
 
