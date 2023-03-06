@@ -27,7 +27,24 @@ networking:
   disableDefaultCNI: true
 EOF
 
-sleep 30
+sleep 10
 kubectl cluster-info --context kind-kind
 ```
+
+Lets install Cilium
+
+```sh
+helm repo add cilium https://helm.cilium.io/
+docker pull quay.io/cilium/cilium:v1.13.0
+kind load docker-image quay.io/cilium/cilium:v1.13.0
+helm install cilium cilium/cilium --version 1.13.0 \
+   --namespace kube-system \
+   --set image.pullPolicy=IfNotPresent \
+   --set ipam.mode=kubernetes
+sleep 30
+kubectl cluster-info --context kind-kind
+kubectl get nodes --context kind-kind
+kubectl get nodes
+```
+
 
