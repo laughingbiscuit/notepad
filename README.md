@@ -2,7 +2,10 @@
 
 [![.github/workflows/pipeline.yml](https://github.com/laughingbiscuit/notepad/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/laughingbiscuit/notepad/actions/workflows/pipeline.yml)
 
-Any shell code blocks are run by github actions and must return 0 for CI to pass.
+- This notepad is clever - any shell code blocks are run by github actions and must return 0 for CI to pass.
+- Remember, GitHub lets you click a button to see the table of contents... TIL!
+
+![Screenshot_20230309_150923_Chrome](https://user-images.githubusercontent.com/43555662/224070129-2854e944-914d-4438-bf13-fce503e2d42d.jpg)
 
 ## Templating and playing around
 
