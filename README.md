@@ -4,6 +4,14 @@
 
 Any shell code blocks are run by github actions and must return 0 for CI to pass.
 
+## Templating and playing around
+
+This repo is a test to see  if i can combine all of my notes into a single repo.
+
+## Testing the notes 
+
+Running some code in github actions to make sure everything is correct
+
 Lets check if our dependencies are installed
 
 ```bash
