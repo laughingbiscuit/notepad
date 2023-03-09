@@ -5,7 +5,7 @@
 - This notepad is clever - any shell code blocks are run by github actions and must return 0 for CI to pass.
 - Remember, GitHub lets you click a button to see the table of contents... TIL!
 
-![Screenshot_20230309_150923_Chrome](https://user-images.githubusercontent.com/43555662/224070129-2854e944-914d-4438-bf13-fce503e2d42d.jpg)
+<img src="https://user-images.githubusercontent.com/43555662/224070129-2854e944-914d-4438-bf13-fce503e2d42d.jpg" width="200" />
 
 ## Templating and playing around
 
