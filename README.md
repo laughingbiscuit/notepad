@@ -127,10 +127,6 @@ However, they were forced online during the coronavirus pandemic.
 
 Let's help them keep their business alive.
 
----
-
-Next: Test the value with a [Design Sprint](4-Sprint.html).
-
 ## Design Sprint
 
 Before committing too much time and money to the project, it is important
