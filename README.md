@@ -316,7 +316,7 @@ paths:
       tags:
       - ping
       responses:
-        200:
+        "200":
           description: Pong
           content:
             application/json:
@@ -330,13 +330,9 @@ components:
       - "pong"
 EOF
 
-docker build -t api-mock -f - . <<EOF
-FROM node:current-slim
-RUN npm i -g @stoplight/prism-cli
-ADD api-mock-openapi.yml .
-CMD prism mock api-mock-openapi.yml
-EOF
+docker run -d --init --rm -v $(pwd):/tmp -p 4010:4010 stoplight/prism:4 mock -h 0.0.0.0 "/tmp/api-mock-openapi.yaml"
 
-docker run -p 8080:8080 -itd api-mock 
-curl localhost:8080/mock/v1/ping
+while ! curl -f localhost:4010/mock/v1/ping; do sleep 1; done
+
+curl localhost:4010/mock/v1/ping
 ```
