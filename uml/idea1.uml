@@ -1,0 +1,26 @@
+@startuml
+actor Customer as c
+actor PhoneAgent as a
+participant Site as s
+participant OrderSystem as o
+participant Kitchen as k
+participant Delivery as d
+
+note over c,o: What proportion of customers prefer web to phone?
+
+alt Web Customer
+  c->a: Order desserts
+  a->o: Submit order
+else Phone Customer
+  c->s: Order desserts
+  s->o: Submit order
+end
+o->k: New order alert
+k->k: Prepare order
+k->o: Notify of readiness
+o->d: New delivery alert
+note over o,d: How many drivers would be need? Can customers collect?
+d->d: Assign driver
+d->c: Deliver dessert
+
+@enduml

@@ -121,11 +121,11 @@ Solutions kept:
 
 Solution one: dessert delivery
 
-![Delivery Approach](idea1.png)
+![Delivery Approach](./uml/idea1.svg)
 
 Solution two: clinic pickup
 
-![Clinic Approach](idea2.png)
+![Clinic Approach](./uml/idea2.svg)
 
 ### Day 4 - Prototyping - Converging/Refining
 
@@ -149,46 +149,13 @@ Hypotheses:
 - Collection will not be allowed during lockdown
 ```
 
-Lo-fi Screen 1
+Lo-fi Prototype 1
 
-```txt
- ____            __           _     ____           _        _           
-|  _ \ ___ _ __ / _| ___  ___| |_  |  _ \ __ _ ___| |_ _ __(_) ___  ___ 
-| |_) / _ \ '__| |_ / _ \/ __| __| | |_) / _` / __| __| '__| |/ _ \/ __|
-|  __/  __/ |  |  _|  __/ (__| |_  |  __/ (_| \__ \ |_| |  | |  __/\__ \
-|_|   \___|_|  |_|  \___|\___|\__| |_|   \__,_|___/\__|_|  |_|\___||___/
+![Prototype1](./uml/prototype1.svg)
 
-Tel: (939) 555-0113
-                                                                        
+Lofi Prototype 2
 
-What would you like to order?
-
-Cannoli x[ 1]
-Eclair  x[ 1]
-
-What is your address?
-[
-
-
-
-]
-
-Any additional notes?
-[
-
-
-
-]
-  [Submit]
-```
-
-Lofi Screen 2
-
-```txt
-
-  Your order is on the way!
-
-```
+![Prototype2](./uml/prototype2.svg)
 
 ```txt
 Prototype Two: Dessert stand in carpark

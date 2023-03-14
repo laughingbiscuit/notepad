@@ -1,0 +1,16 @@
+@startuml
+actor Customer as c
+participant VaxClinic as v
+participant DessertStall as d
+c->v: Arrive for vaccine
+note over c,v: Should customers order their dessert before or after vaccination?
+alt Customer eats before
+v->c: Vaccinate
+d->c: Provide dessert
+else Customer eats after
+d->c: Provide dessert
+v->c: Vaccinate
+end
+note over c,d: How can we serve anti-vaxxers and children?
+
+@enduml
