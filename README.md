@@ -296,6 +296,47 @@ helm repo update
 helm install gloo gloo/gloo -n gloo-system --create-namespace
 sleep 30
 kubectl get all -n gloo-system
-
 ```
 
+## Lets build a little API mock, based on an OpenAPI Specification
+
+```bash
+cat<<EOF > api-mock-openapi.yml
+openapi: 3.0.2
+info:
+  title: Mock API
+  version: "0.1"
+servers:
+  - url: https://api.example.com/mock/v1
+paths:
+  /ping:
+    get:
+      summary: Ping
+      operationId: ping
+      tags:
+      - ping
+      responses:
+        200:
+          description: Pong
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponse"
+components:
+  schemas:
+    StatusResponse:
+      type: string
+      enum:
+      - "pong"
+EOF
+
+docker build -t api-mock -f - . <<EOF
+FROM node:current-slim
+RUN npm i -g @stoplight/prism-cli
+ADD api-mock-openapi.yml .
+CMD prism mock api-mock-openapi.yml
+EOF
+
+docker run -p 8080:8080 -itd api-mock 
+curl localhost:8080/mock/v1/ping
+```
