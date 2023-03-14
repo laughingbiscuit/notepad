@@ -264,7 +264,7 @@ sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 cilium status --wait
-cilium connectivity test
+#cilium connectivity test
 kubectl cluster-info --context kind-kind
 kubectl get nodes
 ```
