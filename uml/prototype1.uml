@@ -1,0 +1,13 @@
+@startsalt
+{
+  {+ Perfect Pastries }
+  Tel: (939) 555-0113
+
+  What would you like to order?
+  Cannoli: ^x1^
+  Eclair:  ^x1^
+  Address: "___________"
+  Requests: "___________"
+  [Submit]
+}
+@endsalt
