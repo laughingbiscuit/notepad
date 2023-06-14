@@ -8,4 +8,4 @@ which httpd
 # generate a static result
 
 mkdir -p target
-echo "Success" > target/index.html
+cucumber -f pretty,html -o target/result.html

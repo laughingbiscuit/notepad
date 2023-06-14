@@ -4,8 +4,8 @@
 |-----------------------|-------|
 | Set up repo 		| DONE 	|
 | Set up Docker pipeline| DONE  |
-| Set up pages 		| In progress |
-| Initialise Cucumber   | |
+| Set up pages 		| DONE  |
+| Initialise Cucumber   | In progress |
 | Simple cli test 	| |
 | Simple API test 	| |
 | Simple docker test 	| |
