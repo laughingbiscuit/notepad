@@ -5,7 +5,7 @@
 | Set up repo 		| DONE 	|
 | Set up Docker pipeline| DONE  |
 | Set up pages 		| DONE  |
-| Initialise Cucumber   | In progress |
+| Initialise Cucumber   | DONE  |
 | Simple cli test 	| |
 | Simple API test 	| |
 | Simple docker test 	| |
