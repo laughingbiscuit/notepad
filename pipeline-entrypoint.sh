@@ -7,5 +7,7 @@ which httpd
 
 # generate a static result
 
+bundle
+
 mkdir -p target
 cucumber -f pretty,html -o target/result.html
