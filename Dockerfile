@@ -6,6 +6,6 @@ FROM alpine:3
 #ADD test.sh .
 
 RUN apk add --update busybox-extras
-COPY entrypoint.sh /entrypoint.sh
+COPY pipeline-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 

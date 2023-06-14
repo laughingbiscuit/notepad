@@ -3,8 +3,8 @@
 | Task 			| Status|
 |-----------------------|-------|
 | Set up repo 		| DONE 	|
-| Set up Docker pipeline| |
-| Set up pages 		| |
+| Set up Docker pipeline| DONE  |
+| Set up pages 		| In progress |
 | Initialise Cucumber   | |
 | Simple cli test 	| |
 | Simple API test 	| |
