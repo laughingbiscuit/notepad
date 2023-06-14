@@ -6,7 +6,7 @@
 | Set up Docker pipeline| DONE  |
 | Set up pages 		| DONE  |
 | Initialise Cucumber   | DONE  |
-| Simple cli test 	| |
+| Simple cli test 	| DONE |
 | Simple API test 	| |
 | Simple docker test 	| |
 | Simple kind test 	| |
