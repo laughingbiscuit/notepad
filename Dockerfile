@@ -5,7 +5,7 @@ FROM alpine:3
 #RUN echo "xvfb-run chromedriver --disable-dev-shm-usage --disable-gpu --no-sandbox --disable-setuid-sandbox &" > start.sh
 #ADD test.sh .
 
-RUN apk add --update busybox-httpd
+RUN apk add --update busybox-extras
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
