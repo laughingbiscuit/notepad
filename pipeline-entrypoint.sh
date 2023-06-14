@@ -10,4 +10,4 @@ which httpd
 bundle
 
 mkdir -p target
-cucumber -f pretty,html -o target/result.html
+cucumber -f pretty -f html -o target/index.html
