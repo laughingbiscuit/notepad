@@ -8,4 +8,3 @@ When('I say hello') do
   attach(stdout, 'text/plain')
   expect(status.success?).to be true
 end
-
