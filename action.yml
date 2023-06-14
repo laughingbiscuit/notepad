@@ -1,0 +1,8 @@
+name: 'Notepad Pipeline'
+description: 'Run cucumber in Docker'
+inputs:
+outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+

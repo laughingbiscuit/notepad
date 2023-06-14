@@ -8,6 +8,8 @@
 | Initialise Cucumber   | |
 | Simple cli test 	| |
 | Simple API test 	| |
+| Simple docker test 	| |
+| Simple kind test 	| |
 | Simple browser test 	| |
 | Publish report 	| |
 | Attachments test	| |
