@@ -15,6 +15,8 @@
 | Publish report 	| |
 | Attachments test	| |
 | PlantUML test		| |
+| asciinema rec		| |
+| asciinema embed player| |
 | Simple API GW example	| |
 | CONTRIBUTING		| |
 | LICENSE		| |
