@@ -22,7 +22,7 @@ Given('I set {word} header to {word}') do |k, v|
 end
 When('I GET {word}') do |path|
   cmd = "curl -isSL #{@host}#{path} #{@cmdsnip} 2>&1"
-#  puts cmd
+  attach(cmd, 'text/plain')
   stdout, stderr, status = Open3.capture3(cmd)
   @prevResult = stdout
   attach(stdout, 'text/plain')
