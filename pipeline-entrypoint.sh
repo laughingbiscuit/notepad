@@ -1,10 +1,10 @@
 #!/bin/sh
 set -xe
 
-#bundle
+bundle
 
-#mkdir -p target
-#cucumber -f pretty -f html -o target/index.html
+mkdir -p target
+cucumber -f pretty -f html -o target/index.html
 
 # remove secrets from report
 cat .github/workflows/pipeline.yml | yq -r '.jobs[].steps[].env[]' | grep -o 'secret.* ' | sed 's/secrets\.//' | while read SOME_SECRET; do
