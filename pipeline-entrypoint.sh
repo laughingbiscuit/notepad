@@ -13,4 +13,4 @@ mkdir -p target
 cucumber -f pretty -f html -o target/index.html
 sed -i "s/$SECRET/***/g" target/index.html
 git config --global safe.directory '*'
-gh secrets list
+gh secret list
