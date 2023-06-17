@@ -23,7 +23,7 @@ end
 When('I GET {word}') do |path|
   cmd = "curl -isSL #{@host}#{path} #{@cmdsnip} 2>&1"
   attach(cmd, 'text/plain')
-  stdout, stderr, status = Open3.capture3(cmd)
+  stdout, stderr, status = Open3.capture3({"SECRET" => env.SECRET}, cmd)
   @prevResult = stdout
   attach(stdout, 'text/plain')
   expect(status.success?).to be true
