@@ -27,7 +27,7 @@ jobs:
         id: pipeline
         uses: ./ 
         env:
-          SECRET: ${{ secrets.SECRET_TOKEN }}
+          SECRET: ${{ secrets.SECRET }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
         if: always()
