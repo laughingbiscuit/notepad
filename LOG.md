@@ -8,7 +8,7 @@
 | Initialise Cucumber   | DONE  |
 | Simple cli test 	| DONE 	|
 | Simple API test 	| DONE 	|
-| Simple secret test 	| |
+| Simple secret test 	| IN PROGRESS |
 | Simple docker test 	| |
 | Simple kind test 	| |
 | Simple browser test 	| |

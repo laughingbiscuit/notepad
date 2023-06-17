@@ -6,7 +6,8 @@ Feature: Cucumber Test
 
   Scenario: API Example
     Given I set X-Debug header to true
-    Given I set X-Debug2 header to false
+    And I set X-Debug2 header to false
+    And I set Authorization header to "$SECRET"
     When I GET /get
     Then response code should be 200
 
