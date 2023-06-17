@@ -27,7 +27,7 @@ jobs:
         id: pipeline
         uses: ./ 
         env:
-          TEST: ${{ secrets }}
+          #pass your secrets here
           SECRET: ${{ secrets.SECRET }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Pages

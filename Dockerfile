@@ -5,7 +5,7 @@ FROM alpine:3
 #RUN echo "xvfb-run chromedriver --disable-dev-shm-usage --disable-gpu --no-sandbox --disable-setuid-sandbox &" > start.sh
 #ADD test.sh .
 
-RUN apk add --update busybox-extras ruby-dev ruby-ffi ruby-bundler curl github-cli git
+RUN apk add --update busybox-extras ruby-dev ruby-ffi ruby-bundler curl github-cli git yq
 COPY pipeline-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 

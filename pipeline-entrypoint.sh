@@ -1,16 +1,13 @@
 #!/bin/sh
 set -xe
 
-echo "Docker action run"
-apk version
-which httpd
-
-# generate a static result
-
 bundle
 
 mkdir -p target
 cucumber -f pretty -f html -o target/index.html
-sed -i "s/$SECRET/***/g" target/index.html
-git config --global safe.directory '*'
-echo "$TEST"
+
+# remove secrets from report
+for SOME_SECRET in "$(cat .github/workflows/pipeline.yml | yq -r '.jobs[].steps[].env[]' | grep -o 'secret.* ' | sed 's/secrets\.//')"; do
+  sed -i "s/$SOME_SECRET/***/g" target/index.html
+done
+
