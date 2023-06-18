@@ -21,7 +21,7 @@ Given('I set {word} header to {word}') do |k, v|
   @cmdsnip += " -H \"#{k}:#{v}\""
 end
 When('I GET {word}') do |path|
-  cmd = "curl -isSL #{@host}#{path} #{@cmdsnip} 2>&1"
+  cmd = "curl -isSL #{@host}#{path} #{@cmdsnip} | grep -iv 'authorization' 2>&1"
   attach(cmd, 'text/plain')
   stdout, stderr, status = Open3.capture3(cmd)
   @prevResult = stdout
