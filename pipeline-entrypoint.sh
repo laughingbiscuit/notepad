@@ -7,5 +7,5 @@ mkdir -p target
 cucumber -f pretty -f html -o target/index.html
 
 cat .github/workflows/pipeline.yml | yq -r '.jobs[].steps[].env[]' | grep -o 'secret.* ' | sed 's/secrets\.//' | while read SOME_SECRET; do
-  ! grep -q $(eval "echo $"$SOME_SECRET"") target/index.html
+  grep -q $(eval "echo $"$SOME_SECRET"") target/index.html && exit 1
 done
