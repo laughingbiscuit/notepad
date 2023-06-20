@@ -38,6 +38,7 @@ end
 ###
 Given('I run an nginx daemon in docker') do
   stdout, stderr, status = Open3.capture3("docker run -itd -p 8080:8080 nginx")
+  attach(stdout, 'text/plain')
   expect(status.success?).to be true
 end
 When('I call nginx') do
