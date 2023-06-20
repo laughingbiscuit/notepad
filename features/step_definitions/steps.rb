@@ -20,7 +20,7 @@ end
 Given('I set {word} header to {word}') do |k, v|
   @cmdsnip += " -H \"#{k}:#{v}\""
 end
-When('I GET {word}') do |path|
+When('I GET {}') do |path|
   cmd = "curl -isSL #{@host}#{path} #{@cmdsnip}' 2>&1"
   attach(cmd, 'text/plain')
   stdout, stderr, status = Open3.capture3(cmd)
@@ -37,7 +37,7 @@ end
 # Docker steps
 ###
 Given('I run an nginx daemon in docker') do
-  stdout, stderr, status = Open3.capture3("docker run -itd -p 8080:8080 nginx")
+  stdout, stderr, status = Open3.capture3("docker run -itd -p 8080:8080 nginx && sleep 1")
   attach(stdout, 'text/plain')
   expect(status.success?).to be true
 end
