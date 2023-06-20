@@ -9,8 +9,8 @@
 | Simple cli test 	| DONE 	|
 | Simple API test 	| DONE 	|
 | Simple secret test 	| DONE  |
-| Prototype result 	| IN PROGRESS |
-| Simple docker test 	| |
+| Prototype result 	| DONE  |
+| Simple docker test 	| In Progress |
 | Simple kind test 	| |
 | Simple browser test 	| |
 | Publish report 	| |

@@ -11,3 +11,8 @@ Feature: Cucumber Test
     When I GET /get
     Then response code should be 200
 
+  Scenario: Docker example
+    Given I run an nginx daemon in docker
+    When I call nginx
+    Then response body should contain Welcome to nginx
+
