@@ -17,7 +17,7 @@ Before do |scenario|
   @host = "http://localhost"
   stdout, stderr, status = Open3.capture3("docker run -d -p 80:80 kennethreitz/httpbin && sleep 2 2>&1")
   attach(stdout, 'text/plain')
-  attach(status.success)
+  attach(status.success?)
   expect(status.success?).to be true
 end
 Given('I set {word} header to {word}') do |k, v|
