@@ -15,7 +15,9 @@ end
 
 Before do |scenario|
   @cmdsnip = ""
-  @host = "https://httpbin.org"
+  @host = "http://localhost"
+  stdout, stderr, status = Open3.capture3("docker run -p 80:80 kennethreitz/httpbin && sleep 2")
+  expect(status.success?).to be true
 end
 Given('I set {word} header to {word}') do |k, v|
   @cmdsnip += " -H \"#{k}:#{v}\""
