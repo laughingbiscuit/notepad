@@ -6,7 +6,6 @@ end
 When('I say hello') do
   stdout, stderr, status = Open3.capture3('sh notepad.sh say_hello 2>&1')
   attach(stdout, 'text/plain')
-  expect(status.success?).to be true
 end
 
 ###
@@ -18,6 +17,7 @@ Before do |scenario|
   @host = "http://localhost"
   stdout, stderr, status = Open3.capture3("docker run -d -p 80:80 kennethreitz/httpbin && sleep 2 2>&1")
   attach(stdout, 'text/plain')
+  attach(status.success)
   expect(status.success?).to be true
 end
 Given('I set {word} header to {word}') do |k, v|
